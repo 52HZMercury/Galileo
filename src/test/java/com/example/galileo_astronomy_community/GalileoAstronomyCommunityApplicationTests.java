@@ -1,4 +1,4 @@
-package org.example.galileo_astronomy_community;
+package com.example.galileo_astronomy_community;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

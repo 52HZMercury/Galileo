@@ -1,4 +1,4 @@
-package org.example.galileoastronomycommunity.pojo;
+package com.galileoastronomycommunity.pojo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,4 +15,14 @@ import lombok.NoArgsConstructor;
 public class User {
     private int UID;
     private String password;
+    private String uname;
+    private String email;
+    private String pnumber;
+
+
+    public User(String pnumber, String password, String uname) {
+        this.setPnumber(pnumber);
+        this.setPassword(password);
+        this.setUname(uname);
+    }
 }

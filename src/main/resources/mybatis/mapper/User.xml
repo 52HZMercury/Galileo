@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="org.example.galileoastronomycommunity.mapper.UserMapper">
+<mapper namespace="com.galileoastronomycommunity.mapper.UserMapper">
     <select id="loadUserByUserId" resultType="User">
-        select * from user where uid = #{Id};
+        SELECT * FROM users WHERE pnumber = #{logid} OR email = #{logid};
     </select>
+
+<!--搜索该号码是否已经被注册-->
+    <select id="selectExistPnumber" resultType="Boolean">
+        select exists (SELECT *
+                       from  users
+                       where
+                           pnumber=#{logid})
+
+    </select>
+
+<!--手机号注册新用户-->
+    <insert id="addUser" parameterType="User" >
+        insert into users (uname,pnumber,password) values (#{uname},#{pnumber},#{password})
+    </insert>
 </mapper>

@@ -1,6 +1,5 @@
-package org.example.galileoastronomycommunity.mapper;
-//import com.baomidou.mybatisplus.annotation.*;
-import org.example.galileoastronomycommunity.pojo.User;
+package com.galileoastronomycommunity.mapper;
+import com.galileoastronomycommunity.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -13,5 +12,7 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface UserMapper {
-    User loadUserByUserId(int id);
+    User loadUserByUserId(String logid);
+    void addUser(User user);
+    boolean selectExistPnumber(String pnumber);
 }

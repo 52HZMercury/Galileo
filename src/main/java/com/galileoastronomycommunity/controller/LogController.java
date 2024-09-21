@@ -1,14 +1,15 @@
-package org.example.galileoastronomycommunity.controller;
+package com.galileoastronomycommunity.controller;
 
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.example.galileoastronomycommunity.service.LogService;
+import com.galileoastronomycommunity.service.LogService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -18,20 +19,20 @@ import org.springframework.web.bind.annotation.RestController;
  * @create: 2024-09-20 20:13
  **/
 @RestController
-@Tag(name = "用户管理")
+@Tag(name = "用户登录")
 public class LogController {
 
     @Autowired
     private LogService logService;
 
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     @Operation(summary = "用户登录", description = "")
-    @Parameter(description = "参数描述")
-    public boolean login(int id, String password, HttpSession session){
+    @Parameters(@Parameter(name = "logid",description = "输入电话号码或者账号绑定的邮箱"))
+    public String login(String logid, String password, HttpSession session){
 
-        boolean islogin = logService.doLogin(id,password);
+        String loginUserName = logService.doLogin(logid,password);
 
-        return islogin;
+        return loginUserName;
     }
 }

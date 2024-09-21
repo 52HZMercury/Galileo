@@ -1,4 +1,4 @@
-package org.example.galileoastronomycommunity.config;
+package com.galileoastronomycommunity.config;
 
 
 import io.swagger.v3.oas.models.ExternalDocumentation;

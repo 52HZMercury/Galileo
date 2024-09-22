@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @program: Galileo Astronomy Community
  * @description:
@@ -29,10 +32,10 @@ public class LogController {
     @PostMapping("/login")
     @Operation(summary = "用户登录", description = "")
     @Parameters(@Parameter(name = "logid",description = "输入电话号码或者账号绑定的邮箱"))
-    public String login(String logid, String password, HttpSession session){
+    public Map<String,String> login(String logid, String password, HttpSession session){
 
-        String loginUserName = logService.doLogin(logid,password);
+        Map<String,String> nameToken = logService.doLogin(logid,password);
 
-        return loginUserName;
+        return nameToken;
     }
 }

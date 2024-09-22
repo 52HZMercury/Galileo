@@ -7,3 +7,5 @@
 参考链接：
 - https://blog.csdn.net/u012888704/article/details/107406374 BCryptPasswordEncoder加密 
 - https://zhuanlan.zhihu.com/p/111824045 还暂未实现redis分布式锁，后续考虑升级
+## 24.9.22
+- 完成token验证登录

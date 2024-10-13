@@ -20,8 +20,7 @@ public class FileUtil {
         String fileName = file.getOriginalFilename();//获取文件的原始的名字
         String suffixName = fileName.substring(fileName.lastIndexOf("."));//文件后缀
         String filePath = "/www/wwwroot/LostandFound/backgroundSystem/lostandfoundimg/dynamic/";
-        // D:/文档/新鲜出炉的程序/SpringBoot/LostandFound/src/main/resources/LostandFoundimg/dynamic
-        // linux /www/wwwroot/LostandFound/backgroundSystem/lostandfoundimg/dynamic/
+       // linux /www/wwwroot/LostandFound/backgroundSystem/lostandfoundimg/dynamic/
         fileName = UUID.randomUUID() + suffixName;//通过uuid生成唯一标识符
         File dest = new File(filePath + fileName);
         if (!dest.getParentFile().exists()) {
@@ -59,4 +58,5 @@ public class FileUtil {
         return fileName;
 
     }
+
 }

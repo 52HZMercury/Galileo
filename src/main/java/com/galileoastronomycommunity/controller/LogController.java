@@ -22,7 +22,6 @@ import java.util.Map;
  * @create: 2024-09-20 20:13
  **/
 @RestController
-@Tag(name = "用户登录")
 public class LogController {
 
     @Autowired

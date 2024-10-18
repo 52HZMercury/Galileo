@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 
 @RestController
-@Tag(name = "用户注册")
 public class RegisterController {
 
     @Autowired

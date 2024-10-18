@@ -23,8 +23,8 @@ import java.util.UUID;
 @Data
 public class JwtConfig {
 
-    private String encryKey;
-    private long expire;
+    private static String encryKey = "salt";
+    private static long expire = 21600;
     private String header;
 
     /**
@@ -32,7 +32,7 @@ public class JwtConfig {
      * @return
      */
     public  String getToken(User user){
-//        System.out.println(encryKey);
+//      System.out.println(encryKey);
         long currentTime = System.currentTimeMillis();
         //过期时间
         Date expireTime = new Date(currentTime + expire * 1000);
@@ -43,7 +43,7 @@ public class JwtConfig {
                 .setId(UUID.randomUUID().toString()) //当前用户
                 .setIssuedAt(new Date()) //签发日期
                 .setSubject("system") //说明
-                .setIssuer("npy") //签发者信息
+                .setIssuer("cn") //签发者信息
                 .signWith(SignatureAlgorithm.HS512, encryKey) //加密方式
                 .addClaims(map)
                 .setExpiration(expireTime) //过期时间
@@ -55,10 +55,14 @@ public class JwtConfig {
      * @param token
      * @return
      */
-    public  boolean isExpiration(String token){
+    public static boolean isExpiration(String token){
         try {
             long currentTime = System.currentTimeMillis();
-            return Jwts.parser().setSigningKey(encryKey).parseClaimsJws(token).getBody().getExpiration().after(new Date(currentTime));
+            if (Jwts.parser().setSigningKey(encryKey).parseClaimsJws(token).getBody().getExpiration().after(new Date(currentTime))){
+                return true;
+            }else {
+                return false;
+            }
         }catch (Exception e){
             return false;
         }

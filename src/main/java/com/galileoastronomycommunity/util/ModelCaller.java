@@ -19,7 +19,7 @@ public class ModelCaller {
      * @return:
      */
 
-    private static final String RECOGNIZE_URL = "http://10.33.17.92:5001/recognize";
+    private static final String RECOGNIZE_URL = "http://47.96.119.233:5001/recognize";
 
     /**
      * 通过HTTP POST请求调用识别接口并返回结果。
@@ -63,7 +63,8 @@ public class ModelCaller {
     }
 
     public static void main(String[] args) throws Exception {
-        Map<String, Float> result = new ModelCaller().recognize("F:/program/PlanetFlask/static/images/2.jpg");
+        //test
+        Map<String, Float> result = new ModelCaller().recognize("/www/wwwroot/GalileoAstronomyCommunity/postingImages/jutiper.jpg");
         System.out.println(result.get(result.keySet().toArray()[0]));
     }
 

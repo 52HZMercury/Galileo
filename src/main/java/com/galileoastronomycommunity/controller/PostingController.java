@@ -1,5 +1,6 @@
 package com.galileoastronomycommunity.controller;
 
+import com.galileoastronomycommunity.service.PostingService;
 import com.galileoastronomycommunity.service.UserService;
 import com.galileoastronomycommunity.util.FileUtil;
 import io.swagger.v3.oas.annotations.Operation;
@@ -22,25 +23,24 @@ public class PostingController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private PostingService postingService;
+    private int newPostingId;
 
-    @PostMapping(value = "/Postingload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    @Operation(summary = "发送帖子接口",description = "上传图片和文案")
+    @PostMapping(value = "/PostingImage",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @Operation(summary = "发送帖子接口",description = "上传图片")
     public String fileUpload(@RequestPart("file") MultipartFile file,String token) throws Exception {
         //先上传帖子图片
         FileUtil fileUtil = new FileUtil();
-        //Service.addimg
-        String response = fileUtil.doFileUpload(file,token);
+        String fileName = fileUtil.doFileUpload(file);
 
-
-        //配上文案
-
-        return response;
+        return postingService.doAddPosting(token,fileName);
     }
 
 
 
     @PostMapping(value = "/headImgload")
-    @Operation(summary = "上传头像图片接口",description = "前提也是你已经登录")
+    @Operation(summary = "上传头像图片接口",description = "登录")
     public boolean headImgload(MultipartFile file) {
 
         FileUtil fileUtil = new FileUtil();

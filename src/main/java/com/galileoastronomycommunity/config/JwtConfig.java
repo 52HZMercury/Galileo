@@ -5,6 +5,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.Data;
+import lombok.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -23,8 +24,8 @@ import java.util.UUID;
 @Data
 public class JwtConfig {
 
-    private static String encryKey = "salt";
-    private static long expire = 21600;
+    private String encryKey;
+    private long expire;
     private String header;
 
     /**
@@ -55,7 +56,7 @@ public class JwtConfig {
      * @param token
      * @return
      */
-    public static boolean isExpiration(String token){
+    public boolean isExpiration(String token){
         try {
             long currentTime = System.currentTimeMillis();
             if (Jwts.parser().setSigningKey(encryKey).parseClaimsJws(token).getBody().getExpiration().after(new Date(currentTime))){

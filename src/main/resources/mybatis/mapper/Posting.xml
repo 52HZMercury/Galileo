@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.galileoastronomycommunity.mapper.PostingMapper">
+    <select id="loadUserByUserId" resultType="User">
+        SELECT * FROM users WHERE pnumber = #{logid} OR email = #{logid};
+    </select>
+
+
+<!--图片新增posting并获取自增主键-->
+<!--    useGeneratedKeys:是否自动生成主键，默认false。-->
+<!--    keyColumn:数据库中的自增主键的列名，默认是数据库表的第一列，当主键列不是表中的第一列的时候需要设置。-->
+<!--    keyProperty:返回的主键值赋给实体类中哪个属性。-->
+    <insert id="addPosting" parameterType="Posting" useGeneratedKeys="true" keyColumn="pid" keyProperty="pid">
+        insert into postings (uid,imgPath,type) values (#{uid},#{imgPath},#{type})
+    </insert>
+</mapper>

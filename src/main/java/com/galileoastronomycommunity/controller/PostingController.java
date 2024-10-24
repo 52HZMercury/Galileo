@@ -25,7 +25,7 @@ public class PostingController {
 
     @Autowired
     private PostingService postingService;
-    private int newPostingId;
+    //private int newPostingId;
 
     @PostMapping(value = "/PostingImage",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @Operation(summary = "发送帖子接口",description = "上传图片")

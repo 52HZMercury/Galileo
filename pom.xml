@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.example</groupId>
-	<artifactId>Galileo_Astronomy_Community</artifactId>
+	<artifactId>Galileo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Galileo Astronomy Community</name>
 	<description>Galileo Astronomy Community</description>

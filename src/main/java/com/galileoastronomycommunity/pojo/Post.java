@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Posting {
+public class Post {
     private String pid;
     private int uid;
     private String imgPath;

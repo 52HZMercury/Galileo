@@ -2,7 +2,7 @@ package com.galileoastronomycommunity.service;
 
 import com.galileoastronomycommunity.config.JwtConfig;
 import com.galileoastronomycommunity.mapper.PostingMapper;
-import com.galileoastronomycommunity.pojo.Posting;
+import com.galileoastronomycommunity.pojo.Post;
 import com.galileoastronomycommunity.util.ModelCaller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,13 +40,13 @@ public class PostingService {
             int UID = (int) jwtConfig.getClamis(token).get("UID");
             System.out.println(UID);
 
-            Posting newPosting = new Posting();
-            newPosting.setUid(UID);
-            newPosting.setImgPath(filePathName);
-            newPosting.setType(filetype);
+            Post newPost = new Post();
+            newPost.setUid(UID);
+            newPost.setImgPath(filePathName);
+            newPost.setType(filetype);
 
             //得到刚刚添加的posting的id
-            postingMapper.addPosting(newPosting);
+            postingMapper.addPosting(newPost);
         }else {
             filetype = "error : token已经过期，请重新获取";
         }

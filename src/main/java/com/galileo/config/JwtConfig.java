@@ -1,11 +1,10 @@
-package com.galileoastronomycommunity.config;
+package com.galileo.config;
 
-import com.galileoastronomycommunity.pojo.User;
+import com.galileo.pojo.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.Data;
-import lombok.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -24,7 +23,7 @@ import java.util.UUID;
 @Data
 public class JwtConfig {
 
-    private String encryKey;
+    public String encryKey;
     private long expire;
     private String header;
 
@@ -33,7 +32,6 @@ public class JwtConfig {
      * @return
      */
     public  String getToken(User user){
-//      System.out.println(encryKey);
         long currentTime = System.currentTimeMillis();
         //过期时间
         Date expireTime = new Date(currentTime + expire * 1000);
@@ -57,6 +55,7 @@ public class JwtConfig {
      * @return
      */
     public boolean isExpiration(String token){
+
         try {
             long currentTime = System.currentTimeMillis();
             if (Jwts.parser().setSigningKey(encryKey).parseClaimsJws(token).getBody().getExpiration().after(new Date(currentTime))){

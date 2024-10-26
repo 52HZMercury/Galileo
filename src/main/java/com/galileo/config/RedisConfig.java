@@ -1,4 +1,4 @@
-package com.galileoastronomycommunity.config;
+package com.galileo.config;
 
 /**
  * @program: Galileo Astronomy Community

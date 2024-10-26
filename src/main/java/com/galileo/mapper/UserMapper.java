@@ -1,5 +1,5 @@
-package com.galileoastronomycommunity.mapper;
-import com.galileoastronomycommunity.pojo.User;
+package com.galileo.mapper;
+import com.galileo.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

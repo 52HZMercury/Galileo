@@ -1,4 +1,4 @@
-package com.galileoastronomycommunity.util;
+package com.galileo.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -64,8 +64,8 @@ public class ModelCaller {
 
     public static void main(String[] args) throws Exception {
         //test
-        Map<String, Float> result = new ModelCaller().recognize("/www/wwwroot/GalileoAstronomyCommunity/postingImages/jutiper.jpg");
-        System.out.println(result.get(result.keySet().toArray()[0]));
+        Map<String, Float> result = new ModelCaller().recognize("/www/wwwroot/Galileo/postsImages/jutiper.jpg");
+        System.out.println(result.keySet().toArray()[0]);
     }
 
 }

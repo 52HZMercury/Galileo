@@ -1,4 +1,4 @@
-package com.galileoastronomycommunity.config;
+package com.galileo.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -16,10 +16,10 @@ public class WebConfig implements WebMvcConfigurer {
     //配置映射路径，使得前端可以访问文件的地址
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/img/**").addResourceLocations("file:/www/wwwroot/GalileoAstronomyCommunity/postingImages/");
+        registry.addResourceHandler("/img/**").addResourceLocations("file:D:/MyProgram/Galileo/src/main/resources/static/images/posts/");
     }
-    // windows D:/MyProgram/Galileo Astronomy Community/src/main/resources/static/images/posting/
-    // linux   /www/wwwroot/GalileoAstronomyCommunity/postingImages/
+    // windows D:/MyProgram/Galileo/src/main/resources/static/images/posts/
+    // linux   /www/wwwroot/Galileo/postsImages/
 
 
 

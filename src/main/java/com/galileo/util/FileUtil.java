@@ -1,12 +1,10 @@
-package com.galileoastronomycommunity.util;
+package com.galileo.util;
 
 
-import com.galileoastronomycommunity.config.JwtConfig;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -18,11 +16,11 @@ import java.util.UUID;
 public class FileUtil {
 
 
-    public String doFileUpload(MultipartFile file) throws Exception {
+    public String doFileUpload(MultipartFile file) {
 
         String fileName = file.getOriginalFilename();//获取文件的原始的名字
         String suffixName = fileName.substring(fileName.lastIndexOf("."));//文件后缀
-        String filePath = "D:/MyProgram/Galileo Astronomy Community/src/main/resources/static/images/posting/";
+        String filePath = "D:/MyProgram/Galileo/src/main/resources/static/images/posts/";
         // linux /www/wwwroot/GalileoAstronomyCommunity/postingImages/
         // develop D:/MyProgram/Galileo Astronomy Community/src/main/resources/static/images/posting/
         fileName = UUID.randomUUID() + suffixName;//通过uuid生成唯一标识符

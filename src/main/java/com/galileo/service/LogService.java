@@ -1,13 +1,13 @@
-package com.galileoastronomycommunity.service;
+package com.galileo.service;
 
-import com.galileoastronomycommunity.pojo.User;
-import com.galileoastronomycommunity.mapper.UserMapper;
+import com.galileo.pojo.User;
+import com.galileo.mapper.UserMapper;
 import io.micrometer.common.util.StringUtils;
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import com.galileoastronomycommunity.config.JwtConfig;
+import com.galileo.config.JwtConfig;
 
 import java.util.HashMap;
 import java.util.Map;

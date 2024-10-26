@@ -1,4 +1,4 @@
-package com.galileoastronomycommunity.service;
+package com.galileo.service;
 
 import org.springframework.stereotype.Service;
 

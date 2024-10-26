@@ -5,7 +5,7 @@ config:
     header: token
 
 mybatis:
-  type-aliases-package: com.galileoastronomycommunity.pojo
+  type-aliases-package: com.galileo.pojo
   mapper-locations: classpath:mybatis/mapper/*.xml
 
 server:
@@ -13,7 +13,7 @@ server:
 
 spring:
   application:
-    name: Galileo Astronomy Community
+    name: Galileo
   datasource:
     username: root
     password: root

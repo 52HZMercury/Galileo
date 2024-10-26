@@ -1,7 +1,7 @@
-package com.galileoastronomycommunity.service;
+package com.galileo.service;
 
-import com.galileoastronomycommunity.mapper.UserMapper;
-import com.galileoastronomycommunity.pojo.User;
+import com.galileo.mapper.UserMapper;
+import com.galileo.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

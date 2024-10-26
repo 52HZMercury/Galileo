@@ -1,4 +1,4 @@
-package com.galileoastronomycommunity.util;
+package com.galileo.util;
 
 /**
  * @program: Galileo Astronomy Community

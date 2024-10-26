@@ -1,4 +1,4 @@
-package com.galileoastronomycommunity.pojo;
+package com.galileo.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Post {
-    private String pid;
+    private int pid;
     private int uid;
     private String imgPath;
     private String type;

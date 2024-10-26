@@ -1,4 +1,4 @@
-package com.galileoastronomycommunity.pojo;
+package com.galileo.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

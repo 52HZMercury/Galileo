@@ -14,13 +14,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Post {
-    private int pid;
-    private int uid;
-    private String imgPath;
-    private String type;
-    private String content;
-    private String time;
-    private String like;
-    private String comment;
-    private String collect;
+    private int pid;        /** 帖子id **/
+    private int uid;        /** 用户id **/
+    private String imgPath; /** 图片路径 **/
+    private String type;    /** 星星类型 **/
+    private String content; /** 文本 **/
+    private String time;    /** 发布时间 **/
+    private String like;    /** 点赞数 **/
+    private String comment; /** 评论 **/
+    private String collect; /** 收藏数 **/
+    private int viewCount;  /** 浏览量 **/
 }

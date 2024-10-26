@@ -49,7 +49,6 @@ public class PostController {
     }
 
 
-
     @PostMapping(value = "/headImgload")
     @Operation(summary = "上传头像图片接口",description = "登录")
     public boolean headImgload(MultipartFile file) {
